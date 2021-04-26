@@ -19,8 +19,9 @@ Movement.getAllMovements = (result) => {
 }
 
 Movement.createNewMovements = (movReqData, result) => {
+  console.log(movReqData)
   dbConnect.query(
-    'INSERT INTO productmovement (movement_id,from_location_id,to_location_id) VALUES(?)',
+    `INSERT INTO productmovement SET ?`,
     movReqData,
     (err, res) => {
       if (err) {
